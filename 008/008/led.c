@@ -14,16 +14,31 @@
 
 */
 
-void main()
+void delay(volatile int d)
+{
+	while (d--);
+}
+
+
+int led_on(int which)
 {
 	unsigned int *pGPFCON =  (unsigned int *)0x56000050;
 	unsigned int *pGPFDATA = (unsigned int *)0x56000054;
 
-	/* 配置 GPF4 为配置引脚 */
-	*pGPFCON = 0x100;
+	if(4 == which)
+	{
+		/* 配置 GPF4 为输出引脚 */
+		*pGPFCON = 0x100;
+	}
+	else if(5 == which)
+	{
+		/* 配置 GPF5 为输出引脚 */
+		*pGPFCON = 0x400;
+	}
 
 	/* 设置GPF4输出0 */
 	*pGPFDATA = 0;
+
 }
 
 
