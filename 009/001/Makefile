@@ -3,7 +3,7 @@
 # gcc -o test a.c b.c
 # gcc -o test a.c b.c -v
 # 百度搜索 gnu make 于凤昌
-# 官方文档 http://www.gun.org/software/make/manual/
+# 官方文档 http://www.gnu.org/software/make/manual/
 
 
 ##################################
